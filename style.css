@@ -1,0 +1,560 @@
+/* --- Variáveis de Cores --- */
+:root {
+    --verde-militar: #556B2F;
+    --salmao-claro: #FFDAB9;
+    --branco: #FFFFFF;
+    --cinza-claro: #F8F8F8;
+    --cinza-escuro: #333333;
+    --verde-hover: #4CB538; /* Um verde ligeiramente mais claro para hover */
+    --salmao-hover: #EECCAA; /* Um salmão ligeiramente mais escuro para hover */
+}
+
+/* --- Reset Básico e Fontes --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6; /* Boa prática para legibilidade */
+}
+
+html {
+    scroll-behavior: smooth; /* Rolagem suave para os links âncora */
+}
+
+body {
+    color: var(--cinza-escuro);
+    background-color: var(--branco);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; /* Espaçamento interno para evitar que o conteúdo cole nas bordas */
+}
+
+section {
+    padding: 80px 0; /* Padding padrão para todas as seções */
+}
+
+/* --- Botões Genéricos --- */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+.primary-btn {
+    background-color: var(--verde-militar);
+    color: var(--branco);
+    border: 1px solid var(--verde-militar);
+}
+
+.primary-btn:hover {
+    background-color: var(--verde-hover);
+    border-color: var(--verde-hover);
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: var(--verde-militar);
+    border: 1px solid var(--verde-militar);
+}
+
+.secondary-btn:hover {
+    background-color: var(--verde-militar);
+    color: var(--branco);
+}
+
+.large-btn {
+    padding: 15px 35px;
+    font-size: 1.1rem;
+}
+
+/* --- Cabeçalho (Header) --- */
+.header {
+    background-color: var(--branco);
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky; /* Fixa o header no topo ao rolar */
+    top: 0;
+    z-index: 1000;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo p {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--verde-militar);
+    margin-bottom: -5px; /* Ajusta o espaçamento entre o nome e a profissão */
+}
+
+.header .logo span {
+    font-size: 0.9rem;
+    color: var(--cinza-escuro);
+    display: block;
+}
+
+.header .main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.header .main-nav a {
+    text-decoration: none;
+    color: var(--cinza-escuro);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.header .main-nav a:hover {
+    color: var(--verde-militar);
+}
+
+/* --- Seção Herói (Hero Section) --- */
+.hero-section {
+    background-color: var(--salmao-claro);
+    padding: 100px 0;
+    min-height: 80vh; /* Garante que a seção ocupe pelo menos 80% da altura da viewport */
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap; /* Permite que os itens quebrem a linha em telas menores */
+}
+
+.hero-text {
+    flex: 1; /* Ocupa o máximo de espaço possível */
+    min-width: 300px; /* Largura mínima para não ficar muito espremido */
+    text-align: left;
+}
+
+.hero-text h1 {
+    font-size: 3.2rem;
+    color: var(--verde-militar);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-text h1 strong {
+    color: var(--verde-militar); /* Garante que a parte em negrito mantenha a cor */
+}
+
+.hero-text p {
+    font-size: 1.15rem;
+    margin-bottom: 30px;
+    color: var(--cinza-escuro);
+}
+
+.hero-image {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Pequenas bordas arredondadas na imagem */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Seção Sobre (About Section) --- */
+.about-section {
+    background-color: var(--branco);
+    padding: 80px 0;
+}
+
+.about-section .container {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.about-image {
+    flex: 1;
+    min-width: 280px;
+    text-align: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+    flex: 2; /* Ocupa mais espaço que a imagem */
+    min-width: 300px;
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    color: var(--verde-militar);
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+    color: var(--cinza-escuro);
+}
+
+/* --- Seção Serviços (Services Section) --- */
+.services-section {
+    background-color: var(--cinza-claro);
+    text-align: center;
+}
+
+.services-section h2 {
+    font-size: 2.5rem;
+    color: var(--verde-militar);
+    margin-bottom: 50px;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 280px mínimo, 1fr para distribuir */
+    gap: 30px;
+}
+
+.service-item {
+    background-color: var(--branco);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+.service-item i {
+    font-size: 3rem;
+    color: var(--verde-militar);
+    margin-bottom: 20px;
+}
+
+.service-item h3 {
+    font-size: 1.5rem;
+    color: var(--verde-militar);
+    margin-bottom: 15px;
+}
+
+.service-item p {
+    font-size: 1rem;
+    color: var(--cinza-escuro);
+}
+
+/* --- Seção Clientes (Clients Section) --- */
+.clients-section {
+    background-color: var(--salmao-claro);
+    text-align: center;
+}
+
+.clients-section h2 {
+    font-size: 2.5rem;
+    color: var(--verde-militar);
+    margin-bottom: 50px;
+}
+
+.client-logos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.client-logos img {
+    max-width: 150px;
+    height: auto;
+    filter: grayscale(100%); /* Deixa os logos em escala de cinza para padronizar */
+    opacity: 0.7;
+    transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.client-logos img:hover {
+    filter: grayscale(0%); /* Colore o logo ao passar o mouse */
+    opacity: 1;
+}
+
+.testimonials h3 {
+    font-size: 1.8rem;
+    color: var(--verde-militar);
+    margin-bottom: 30px;
+}
+
+.testimonial-item {
+    background-color: var(--branco);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    max-width: 700px;
+    margin: 0 auto 25px auto; /* Centraliza e adiciona espaço entre depoimentos */
+}
+
+.testimonial-item p {
+    font-style: italic;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    color: var(--cinza-escuro);
+}
+
+.testimonial-item span {
+    display: block;
+    font-weight: 600;
+    color: var(--verde-militar);
+    font-size: 0.95rem;
+}
+
+/* --- Seção Contato (Contact Section) --- */
+.contact-section {
+    background-color: var(--branco);
+    padding: 80px 0;
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    color: var(--verde-militar);
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.contact-content {
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza os blocos de contato/formulário */
+}
+
+.contact-info, .contact-form {
+    flex: 1;
+    min-width: 300px; /* Garante que os blocos não fiquem muito pequenos */
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    color: var(--cinza-escuro);
+}
+
+.contact-info p i {
+    margin-right: 10px;
+    color: var(--verde-militar);
+}
+
+.contact-info a {
+    color: var(--cinza-escuro);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: var(--verde-militar);
+    text-decoration: underline;
+}
+
+.social-links {
+    margin-top: 30px;
+}
+
+.social-links a {
+    font-size: 2rem;
+    color: var(--verde-militar);
+    margin-right: 20px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--verde-hover);
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: var(--cinza-claro);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.contact-form label {
+    font-weight: 600;
+    color: var(--verde-militar);
+    margin-bottom: 5px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--verde-militar);
+    outline: none;
+}
+
+.contact-form textarea {
+    resize: vertical; /* Permite redimensionar apenas verticalmente */
+}
+
+.contact-form button {
+    margin-top: 10px;
+    align-self: flex-start; /* Alinha o botão à esquerda dentro do formulário flex */
+}
+
+/* --- Rodapé (Footer) --- */
+.footer {
+    background-color: var(--verde-militar);
+    color: var(--branco);
+    text-align: center;
+    padding: 25px 0;
+    font-size: 0.9rem;
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.footer a {
+    color: var(--branco);
+    text-decoration: none;
+    transition: text-decoration 0.3s ease;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* --- Media Queries para Responsividade --- */
+
+/* Ajustes para telas menores que 992px (tablets e alguns notebooks) */
+@media screen and (max-width: 992px) {
+    .header .main-nav {
+        display: none; /* Esconde a navegação principal, pode ser substituída por um menu hambúrguer */
+    }
+
+    .header .container {
+        justify-content: center; /* Centraliza logo e botão quando nav some */
+    }
+
+    .hero-content, .about-section .container, .contact-content {
+        flex-direction: column; /* Pilha os elementos em coluna */
+        text-align: center;
+    }
+
+    .hero-text, .about-text, .hero-image, .about-image, .contact-info, .contact-form {
+        min-width: unset; /* Remove min-width para flexibilidade total */
+        width: 100%; /* Ocupa toda a largura disponível */
+        text-align: center; /* Centraliza texto em blocos */
+    }
+
+    .hero-text h1, .about-text h2, .services-section h2, .clients-section h2, .testimonials h3, .contact-section h2 {
+        font-size: 2.2rem; /* Reduz o tamanho dos títulos */
+    }
+
+    .hero-text p, .contact-info p {
+        font-size: 1rem;
+    }
+
+    .contact-form button {
+        align-self: center; /* Centraliza o botão do formulário */
+    }
+}
+
+/* Ajustes para telas menores que 768px (smartphones) */
+@media screen and (max-width: 768px) {
+    section {
+        padding: 50px 0; /* Menos padding em seções */
+    }
+
+    .header .logo p {
+        font-size: 1.5rem;
+    }
+
+    .header .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+    }
+
+    .large-btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr; /* Uma coluna por padrão */
+    }
+
+    .client-logos {
+        gap: 20px;
+    }
+
+    .client-logos img {
+        max-width: 100px; /* Reduz tamanho dos logos */
+    }
+
+    .testimonial-item {
+        padding: 20px;
+    }
+
+    .social-links a {
+        font-size: 1.8rem;
+    }
+}
+
+/* Ajustes para telas menores que 480px (smartphones menores) */
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .about-text h2, .services-section h2, .clients-section h2, .testimonials h3, .contact-section h2 {
+        font-size: 2rem;
+    }
+}
